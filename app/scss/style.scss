@@ -3,8 +3,9 @@ $tw: 1200px;
 $lw: 1370px;
 
 :root {
-    --color-text: #3C3C3B;
-	--color-main: #0094D2;
+    --color-text: #1E1E1E;
+	--color-main: #F9B233;
+	--color-second: #5A4596;
 }
 
 @mixin border {
@@ -65,6 +66,10 @@ body {
   	overflow-x: hidden;
   	@include f-r;
   	font-size: 18px;
+
+	@media only screen and (max-width : $mw) {
+		padding-top: 45px;
+	}
 }
 
 input {

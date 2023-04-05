@@ -1,0 +1,53 @@
+/* ---------------------- Section top-inner ---------------------- */
+section.top-inner {
+	padding-top: 85px;
+    padding-bottom: 70px;							
+	color: #fff;
+	text-align: center;
+    position: relative;
+    z-index: 99;
+    border-bottom: 1px solid #0814555b;
+	background: #fff url("../images/inner/bg-top.png") no-repeat;
+    background-size: cover;
+
+	.section-inner {
+		z-index: 2;
+	}
+	.title {
+		@include f-r;
+		font-size: 75px; 
+		line-height: 1;
+		margin: 0;
+	}
+
+	.breadcrumbs {
+		@include f-r;
+		font-size: 18px;
+        margin-top: 10px;
+        text-align: center;
+	}
+
+    @media only screen and (max-width : $lw) {
+        padding-top: 65px;
+        padding-bottom: 50px;
+        .title {
+            font-size: 60px;
+        }
+        .breadcrumbs {
+            font-size: 16px;
+        }
+    }
+
+
+    @media only screen and (max-width : $mw) {
+        padding-top: 30px;
+        padding-bottom: 20px;
+        .title {
+            font-size: 43px;
+        }
+        .breadcrumbs {
+            margin-top: 8px;
+        }
+	}
+}
+/* --------------------- /Section top-inner ---------------------- */

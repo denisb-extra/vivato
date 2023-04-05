@@ -27,7 +27,7 @@ section {
 
 .content {
 	@include f-r;
-	font-size: 18px;
+	font-size: 20px;
 	color: var(--color-text);
 	line-height: 1.5;
 	&.white {
@@ -35,6 +35,9 @@ section {
 	}
 	p,ul,li,h1,h2,h3,h4,h5,img {
 		margin-top: 15px;
+		&:first-child {
+			margin-top: 0;
+		}
 	}
 	a {
 		color: var(--color-main);
@@ -50,6 +53,10 @@ section {
 
 	img {
 		max-width: 100%;
+	}
+
+	@media only screen and (max-width : $mw) {
+		font-size: 18px;
 	}
 }
 
@@ -128,15 +135,15 @@ section {
 #sm_menu_ham {
 	position: static;
 	span {
-		background-color: #fff;
+		background-color: var(--color-second);
 		height: 3px;
 	}
 }
 
 .sm_menu_outer {
-	background: #000;
+	background: var(--color-second);
 	&.slide .mobile_menu .sub-menu {
-		background: #000;;
+		background-color: var(--color-second);
 		height: calc(100vh - 45px);
 	}
 	.mobile_menu {
