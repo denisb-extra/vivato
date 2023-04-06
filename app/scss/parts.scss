@@ -97,17 +97,44 @@ section {
 }
 
 .section-title {
-	@include f-b;
-	font-size: 36px;
+	@include f-r;
+	font-size: 67px;
 	color: var(--color-text);
+	line-height: 1;
+	span {
+		color: var(--color-main);
+	}
 	&.white {
 		color: #fff;
 	}
+
+	@media only screen and (max-width : $lw) {
+		font-size: 57px;
+	}
 	@media only screen and (max-width : $tw) {
-		font-size: 30px;
+		font-size: 47px;
 	}
 	@media only screen and (max-width : $mw) {
-		font-size: 25px;
+		font-size: 37px;
+	}
+}
+
+.section-subtitle {
+	@include f-r;
+	font-size: 24px;
+	color: var(--color-text);
+	margin-top: 10px;
+	&:first-child {
+		margin-top: 0;
+	}
+	@media only screen and (max-width : $lw) {
+		font-size: 22px;
+	}
+	@media only screen and (max-width : $tw) {
+		font-size: 20px;
+	}
+	@media only screen and (max-width : $mw) {
+		font-size: 19px;
 	}
 }
 

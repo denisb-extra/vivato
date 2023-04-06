@@ -15,9 +15,33 @@ header {
         top: 0;
         left: 0;
         right: 0;
-		#sm_menu_ham {
-			filter: brightness(0) invert(1);
-		}
+        .links {
+            .link {
+                .icon {
+                    filter: brightness(0) invert(1);
+                }
+                .text {
+                    color: #fff;
+                }
+            }
+        }
+        .menu-cont {
+            height: 100%;
+            text-align: right;
+            margin: 0 35px;
+            display: inline-block;
+            position: relative;
+            ul.main-menu {
+                .menu-item-has-children, .has-extra-menu { 
+                    background: url("../images/icons/rdw.svg") no-repeat left 10px center;
+                }
+                > li {
+                    > a {
+                        color: #fff;
+                    }
+                }
+            }
+        }
 	}
 
 	
@@ -40,7 +64,7 @@ header {
         align-items: center;
         justify-content: flex-start;
 		img {
-			max-height: 86%;
+			max-height: 60%;
 		}
 	}
 
@@ -190,21 +214,59 @@ header {
         }
     }
 
-    @media only screen and (max-width : $lw) {
-        height: 75px;
+    @media only screen and (max-width : 1500px) {
         .header-inner {
             padding: 0 25px;
         }
-
         .menu-cont {
             margin: 0 25px;
             ul.main-menu {
                 > li {
                     padding: 0 10px;
                     > a {
-                        font-size: 19px;
-                        padding: 5px 5px;
+                        font-size: 18px;
                     }
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width : $lw) {
+        height: 75px;
+        .header-inner {
+            padding: 0 20px;
+        }
+    }
+
+    @media only screen and (max-width : 1270px) {
+        .header-inner {
+            padding: 0 10px;
+        }
+        .links {
+            .link {
+                margin: 0 10px;
+            }
+        }
+
+        .menu-cont {
+            margin: 0 20px;
+            ul.main-menu {
+                > li {
+                    padding: 0 5px;
+                    > a {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width : $tw) {
+        height: 60px;
+        .links {
+            .link {
+                .text {
+                    display: none;
                 }
             }
         }
@@ -216,9 +278,20 @@ header {
         right: 0;
         top: 0;
         height: 45px;
+        box-shadow: 0px 2px 15px 0px rgba(50, 50, 50, 0.2);
         &.home {
             position: fixed;
-            background: #24397D;
+            background: #fff;
+            .menu-cont {
+                display: none;
+            }
+            .links {
+                .link {
+                    .icon {
+                        filter: none;
+                    }
+                }
+            }
         }
         .menu-cont {
             display: none;
@@ -226,10 +299,13 @@ header {
         .header-inner {
             padding: 0 10px;
         }
+        .links {
+            margin-left: 20px;
+        }
 
         .logo {
             img {
-                max-height: 100%;
+                max-height: 70%;
             }
         }
     }
@@ -238,7 +314,79 @@ header {
 }
 /* --------------------- /header ---------------------- */
 
+/* ---------------------- Section slider-top ---------------------- */
+section.slider-top {
+    position: relative;
+    height: 952px;
+    padding-top: 0;
+    padding-bottom: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    .bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        
+    }
 
+    .image {
+        height: 100%;
+        @include flex-center;
+        img {
+            height: 100%;
+        }
+    }
+    .slider-top-main {
+        height: 100%;
+        .swiper-slide {
+            height: 100%;
+            position: relative;
+            @include flex-center;
+            img {
+                height: 100%;
+            }
+
+            &:after {
+                content: "";
+                position: absolute;
+                display: block;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                font-size: 0;
+                z-index: 2;
+                background: #000;
+                opacity: 0.25;
+            }
+        }
+    }
+
+
+ 
+    @media only screen and (max-width : $lw) {
+        height: 650px;
+
+    }
+
+    @media only screen and (max-width : $tw) {
+
+
+        
+    }
+
+
+    @media only screen and (max-width : $mw) {
+        height: 550px;
+        padding-top: 45px;
+    }
+
+
+}
+/* --------------------- /Section slider-top ---------------------- */
 
 
 /* ---------------------- footer ---------------------- */
@@ -418,21 +566,63 @@ footer {
 
 
     @media only screen and (max-width : $lw) {
-       
+        .part-top {
+            padding-top: 70px;
+        }
+
+        .part-bottom {   
+            .top {
+                .logo {
+                    img {
+                        max-height: 40px;
+                    }
+                }
+                .menu-cont {
+                    margin: 0 25px;
+                    ul.main-menu {
+                        > li {
+                            padding: 0 8px;
+                            > a {
+                                font-size: 17px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
   
     }
 
     @media only screen and (max-width : $tw) {
-
+        .part-bottom {   
+            .top {
+                flex-direction: column;
+                .menu-cont {
+                    margin: 25px 0px;
+                }
+            }
+        }
     }
 
     @media only screen and (max-width : $mw) {
 
 
         .part-top {
-            padding-top: 20px;
+            padding-top: 35px;
+            padding-bottom: 35px;
+            .cont-form {
+                flex-direction: column;
+                .text {
+                    margin-left: 0;
+                    font-size: 30px;
+                }
+                .wpcf7 {
+                    margin-top: 25px;
+                }
+            }
             .cols {
                 flex-wrap: wrap;
+                margin-top: 35px;
                 .col {
                     flex: 50% 1;
                     margin-top: 25px;
@@ -448,19 +638,23 @@ footer {
                 }
             }
         }
-
-        .part-bottom {
-            flex-wrap: wrap;
-            padding: 15px 0;
-            p {
-                width: 100%;
-                text-align: center;
-                margin: 7px;
+        .part-bottom {   
+            .top {
+                .menu-cont {
+                    ul.main-menu {
+                        flex-direction: column;
+                    }
+                }
             }
-            .sep {
-                display: none;
+            .bottom {
+                flex-direction: column;
+                .sep {
+                    background: transparent;
+                    height: 10px;
+                }
             }
         }
+    
 
         
     }
