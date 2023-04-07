@@ -6,7 +6,6 @@ section.top-inner {
 	text-align: center;
     position: relative;
     z-index: 99;
-    border-bottom: 1px solid #0814555b;
 	background: #fff url("../images/inner/bg-top.png") no-repeat;
     background-size: cover;
 
@@ -51,3 +50,457 @@ section.top-inner {
 	}
 }
 /* --------------------- /Section top-inner ---------------------- */
+
+
+/* ---------------------- Section top-inner-attraction ---------------------- */
+section.top-inner-attraction {
+    padding: 25px 0;							
+	color: #fff;
+	text-align: center;
+    position: relative;
+    z-index: 99;
+	background: #fff url("../images/inner/top-inner-attraction.png") no-repeat;
+    background-size: cover;
+
+	.section-inner {
+		z-index: 2;
+	}
+
+	.breadcrumbs {
+		@include f-r;
+		font-size: 18px;
+        text-align: center;
+	}
+
+    @media only screen and (max-width : $lw) {
+        .breadcrumbs {
+            font-size: 16px;
+        }
+    }
+
+
+    @media only screen and (max-width : $mw) {
+        .breadcrumbs {
+           
+        }
+	}
+}
+/* --------------------- /Section top-inner-attraction ---------------------- */
+
+/* ---------------------- Section attraction ---------------------- */
+section.attraction {
+    .title-main {
+        @include f-r;
+        font-size: 67px;
+        color: var(--color-second);
+    }
+
+    .info {
+        margin-top: 40px;
+        .item {
+            display: flex;
+            margin-top: 15px;
+            &:first-child {
+                margin-top: 0;
+            }
+            .icon {
+                width: 30px;
+                text-align: center;
+                margin-left: 5px;
+            }
+
+            .text {
+                @include f-r;
+                font-size: 20px;
+                color: var(--color-text);
+                p {
+                    margin-top: 5px;
+                    &:first-child {
+                        margin-top: 0;
+                    }
+                }
+            }
+            
+
+        }
+    }
+
+    .about {
+        margin-top: 35px;
+    }
+
+    .swiper-container {
+        overflow: visible;
+        .swiper-wrapper {
+            overflow: visible;
+            .swiper-slide {
+                @include flex-center;
+                font-size: 0;
+                overflow: hidden;
+                filter: drop-shadow(0px 15px 30px rgba(63, 80, 112, 0.26));
+                border-radius: 10px;
+                max-height: 470px;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
+        .pagination {
+            margin-top: 35px;
+            display: flex;
+            justify-content: center;
+            .swiper-pagination-bullet {
+                height: 10px;
+                width: 10px;
+                background: #D9D9D9;
+                opacity: 1;
+                transition: 0.5s;
+                margin: 0 6px;
+                &.swiper-pagination-bullet-active {
+                    background: var(--color-main);
+                }
+            }
+        }
+    }
+
+    .buttons {
+        margin-top: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .button-icon {
+            margin: 0 20px;
+        }
+    }
+
+    @media only screen and (max-width : $lw) {
+        .title-main {
+            font-size: 57px;
+        }
+    }
+
+    @media only screen and (max-width : $tw) {
+        .title-main {
+            font-size: 50px;
+        }
+        .swiper-container {
+            .swiper-wrapper {
+                .swiper-slide {
+                    max-height: 400px;
+                }
+            }
+        }
+        .info {
+            .item {
+                .text {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width : $mw) {
+        .title-main {
+            font-size: 40px;
+        }
+        .swiper-container {
+            .swiper-wrapper {
+                .swiper-slide {
+                    max-height: 350px;
+                }
+            }
+        }
+
+        .buttons {
+            flex-direction: column;
+            align-items: flex-start;
+            padding-right: 25px;
+            margin-top: 25px;
+            .button-icon {
+                margin: 20px 0;
+            }
+        }
+    }
+}
+/* --------------------- /Section attraction ---------------------- */
+
+/* ---------------------- Section opinion ---------------------- */
+section.opinion {
+    .content {
+        margin-top: 25px;
+    }
+    .button-icon {
+        margin-top: 25px;
+    }
+}
+/* --------------------- /Section opinion ---------------------- */
+
+/* ---------------------- Section attractions ---------------------- */
+section.attractions {
+    overflow: visible;
+    .decor {
+        left: 0;
+        top: -230px;
+        width: 33%;
+        text-align: left;
+    }
+    .boxes {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: -17px;
+        margin-top: 35px;
+        .box {
+            width: 25%;
+            padding: 17px;
+        }
+    }
+
+    .cont-button {
+        margin-top: 75px;
+        text-align: left;
+    }
+
+    @media only screen and (max-width : $mw) {
+        .boxes {
+            margin: -10px;
+            margin-top: 25px;
+            .box {
+                width: 50%;
+                padding: 10px;
+            }
+        }
+        .cont-button {
+            margin-top: 45px;
+        }
+    }
+}
+/* --------------------- /Section attractions ---------------------- */
+
+.box-attraction {
+    cursor: pointer;
+    .inner {
+        position: relative;
+    }
+    .image {
+        @include flex-center;
+        font-size: 0;
+        height: 290px;
+        overflow: hidden;
+        filter: drop-shadow(0px 15px 30px rgba(63, 80, 112, 0.26));
+        border-radius: 10px;
+        img {
+            height: 100%;
+        }
+    }
+    .text {
+        margin-top: 20px;
+        .title {
+            @include f-r;
+            font-size: 32px;
+            color: var(--color-text);
+            transition: 0.5s;
+        }
+        .subtitle {
+            @include f-r;
+            font-size: 24px;
+            color: #5C5C5C;
+        }
+    }
+
+    &:hover {
+        .text {
+            .title {
+                color: var(--color-main);
+            }
+        }
+    }
+    @media only screen and (max-width : $lw) {
+        .image {
+            height: 220px;
+        }
+        .text {
+            margin-top: 15px;
+            .title {
+                font-size: 28px;
+            }
+            .subtitle {
+                font-size: 20px;
+            }
+        }
+    }
+
+    @media only screen and (max-width : $mw) {
+        max-width: 200px;
+        .image {
+            height: 140px;
+        }
+        .text {
+            margin-top: 10px;
+            .title {
+                font-size: 22px;
+            }
+            .subtitle {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+/* ---------------------- Section locations ---------------------- */
+section.locations {
+    .boxes {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -19px;
+        margin-top: 35px;
+        .box {
+            width: 33.33%;
+            padding: 19px;
+        }
+    }
+
+    @media only screen and (max-width : $mw) {
+        .boxes {
+            margin: -7px;
+            margin-top: 25px;
+            .box {
+                width: 50%;
+                padding: 7px;
+            }
+        }
+    }
+
+}
+/* --------------------- /Section locations ---------------------- */
+
+.box-location {
+    .inner {
+        position: relative;
+    }
+    .image {
+        @include flex-center;
+        font-size: 0;
+        height: 434px;
+        overflow: hidden;
+        box-shadow: 0px 15px 30px rgba(90, 69, 150, 0.26);
+        border-radius: 10px;
+        position: relative;
+        img {
+            height: 100%;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(270deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+        }
+    }
+    .text {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 2;
+        padding: 30px 30px;
+        .title {
+            @include f-r;
+            font-size: 36px;
+            color: #fff;
+            cursor: pointer;
+            transition: 0.5s;
+            display: block;
+            &:hover {
+                color: var(--color-main);
+            }
+        }
+        .list {
+            margin-top: 20px;
+            .item {
+                display: block;
+                @include f-r;
+                font-size: 24px;
+                color: #fff;
+                margin-top: 10px;
+                cursor: pointer;
+                transition: 0.5s;
+                &:hover {
+                    color: var(--color-main);
+                }
+            }
+        }
+
+        .button {
+            display: inline-block;
+            @include f-r;
+            font-size: 20px;
+            color: #fff;
+            margin-top: 35px;
+            text-decoration: underline;
+            cursor: pointer;
+            transition: 0.5s;
+            &:hover {
+                color: var(--color-main);
+            }
+        }
+    }
+
+    @media only screen and (max-width : $lw) {
+        .image {
+            height: 390px;
+        }
+
+        .text {
+            padding: 30px 30px;
+            .title {
+                font-size: 30px;
+            }
+            .list {
+                margin-top: 20px;
+                .item {
+                    font-size: 20px;
+                }
+            }
+    
+            .button {
+                font-size: 18px;
+                margin-top: 35px;
+
+            }
+        }
+    }
+
+    @media only screen and (max-width : $mw) {
+        .image {
+            height: 390px;
+        }
+
+        .text {
+            padding: 20px 15px;
+            .title {
+                font-size: 22px;
+            }
+            .list {
+                margin-top: 20px;
+                .item {
+                    font-size: 17px;
+                }
+            }
+    
+            .button {
+                font-size: 16px;
+                margin-top: 25px;
+
+            }
+        }
+    }
+
+}

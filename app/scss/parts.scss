@@ -139,6 +139,61 @@ section {
 }
 
 
+.button-icon {
+	.inner {
+		display: flex;
+		align-items: center;
+	}
+	
+	img {
+		margin-left: 5px;
+	}
+
+	@include f-r;
+	font-size: 20px;
+	color: var(--color-second);
+	white-space: nowrap;
+
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+	&:after {
+		content: "";
+		position: absolute;
+		display: block;
+		right: 0;
+		bottom: -6px;
+		left: 0;
+		height: 2px;
+		background-color: var(--color-second);
+		transition: 0.5s;
+	}
+
+	&:hover {
+		color: var(--color-main);
+		&:after {
+			background-color: var(--color-main);
+		}
+	}
+
+	@media only screen and (max-width : $tw) {
+		img {
+			height: 20px;
+			margin-left: 5px;
+		}
+		font-size: 18px;
+	}
+}
+
+.decor {
+	position: absolute;
+	font-size: 0;
+	pointer-events: none;
+	img {
+		max-width: 100%;
+	}
+}
+
 .loading:after {
 	display: inline-block;
     font: normal normal normal 14px/1 FontAwesome;
