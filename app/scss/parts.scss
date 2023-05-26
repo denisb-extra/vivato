@@ -55,8 +55,11 @@ section {
 		max-width: 100%;
 	}
 
-	@media only screen and (max-width : $mw) {
+	@media only screen and (max-width : $lw) {
 		font-size: 18px;
+	}
+	@media only screen and (max-width : $mw) {
+		font-size: 17px;
 	}
 }
 
@@ -72,6 +75,7 @@ section {
 	}
 	.part {
 		width: 50%;
+		flex-grow: 1;
 		padding: 0 45px;
 		position: relative;
 		&:nth-child(1) {
@@ -140,6 +144,7 @@ section {
 
 
 .button-icon {
+	cursor: pointer;
 	.inner {
 		display: flex;
 		align-items: center;
@@ -157,7 +162,7 @@ section {
 	display: inline-block;
 	position: relative;
 	transition: 0.5s;
-	&:after {
+	&:before {
 		content: "";
 		position: absolute;
 		display: block;
@@ -171,8 +176,50 @@ section {
 
 	&:hover {
 		color: var(--color-main);
-		&:after {
+		&:before {
 			background-color: var(--color-main);
+		}
+	}
+
+	&.cont-like {
+		.wpulike {
+			margin-left: 5px;
+			padding: 0;
+			.count-box {
+				display: none;
+			}
+			.wp_ulike_btn {
+				background-color: #fff;
+				padding: 15px 15px;
+			}
+
+			.wp_ulike_put_image {
+				&:after {
+					width: 22px;
+					height: 22px;
+				}
+			}
+		}
+	}
+
+	&.button-hotel {
+		.icon {
+			height: 17px;
+			width: 17px;
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: contain;
+			margin-left: 5px;
+		}
+		&.liked {
+			.icon {
+				background-image: url("../images/icons/heart-full.svg");
+			}
+		}
+		&.not-liked {
+			.icon {
+				background-image: url("../images/icons/heart-empty.svg");
+			}
 		}
 	}
 
@@ -185,6 +232,183 @@ section {
 	}
 }
 
+.button-follow {
+	.wpulike {
+		margin-left: 5px;
+		padding: 0;
+		.count-box {
+			display: none;
+		}
+		.wp_ulike_btn {
+			background-color: transparent;
+			padding: 15px 15px;
+		}
+
+		.wp_ulike_put_image {
+			&:after {
+				width: 22px;
+				height: 22px;
+			}
+		}
+	}
+}
+
+.remove-btn {
+	.wpulike {
+		display: none;
+	}
+}
+
+.load-more {
+	@include f-r;
+	font-size: 20px;
+	color: #fff;
+	background: var(--color-second);
+	white-space: nowrap;
+
+	box-shadow: 0px 15px 30px #5A459680;
+	border-radius: 45px;
+	padding: 20px 25px;
+
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+
+	margin-top: 35px;
+
+	cursor: pointer;
+
+	&.loading {
+		pointer-events: none;
+	}
+
+	&:hover {
+		background: #8564E4;
+	}
+}
+
+.button-yellow {
+	.inner {
+		display: flex;
+		align-items: center;
+	}
+	
+	img {
+		margin-left: 5px;
+	}
+
+	@include f-r;
+	font-size: 20px;
+	color: #fff;
+	background: var(--color-main);
+	white-space: nowrap;
+
+	box-shadow: 0px 15px 30px rgba(249, 178, 51, 0.49);
+	border-radius: 45px;
+	padding: 20px 25px;
+
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+}
+
+
+.image-shadow {
+	font-size: 0;
+	display: inline-block;
+	filter: drop-shadow(0px 15px 30px rgba(63, 80, 112, 0.26));
+	border-radius: 10px;
+	overflow: hidden;
+}
+.button-viva {
+	background: var(--color-main);
+	border: 1px solid var(--color-main);
+	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+	border-radius: 10px;
+	flex-grow: 1;
+	text-align: center;
+	@include f-r;
+	font-size: 22px;
+	color: #fff;
+	cursor: pointer;
+	padding: 17px;
+	min-width: 230px;
+	transition: 0.5s;
+	@include flex-center;
+	&:hover {
+		background: var(--color-second);
+	}
+}
+
+.cont-button {
+	margin-top: 75px;
+	text-align: left;
+
+	@media only screen and (max-width : $mw) {
+		margin-top: 35px;
+	}
+}
+
+.button-arrow {
+	@include f-r;
+	font-size: 20px;
+	color: #fff;
+	padding-left: 35px;
+	background: url("../images/icons/arrow-w-l.svg") no-repeat;
+	background-position: left 5px center;
+
+	display: inline-block;
+	margin-top: 35px;
+	cursor: pointer;
+	transition: 0.5s;
+	&:hover {
+		background-position: left center;
+	}
+
+	&.dark {
+		background-image: url("../images/icons/r-more-dark.svg");
+		color: #5A4596;
+	}
+
+
+}
+
+.text-hidden {
+	.text {
+		overflow: hidden;
+		position: relative;
+		transition: 0.5s;
+		&:after {
+			content: "";
+			display: block;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			height: 50px;
+			background-image: linear-gradient(180deg, rgba(255,255,255,0) 0, rgba(255,255,255,1) 100%);
+			z-index: 9;
+			transition: 0.5s;
+			opacity: 0;
+		}
+		&.is-hidden {
+			&:after {
+				opacity: 1;
+			}
+		}
+	}
+	
+}
+
+.read-more {
+	@include f-r;
+	font-size: 20px;
+	color: var(--color-second);
+	display: inline-block;
+	margin-top: 20px;
+	cursor: pointer;
+}
+
 .decor {
 	position: absolute;
 	font-size: 0;
@@ -194,24 +418,29 @@ section {
 	}
 }
 
+
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
 .loading:after {
 	display: inline-block;
-    font: normal normal normal 14px/1 FontAwesome;
-    font-size: inherit;
-    text-rendering: auto;
-    content: "\f1ce";
-    animation: fa-spin .75s linear infinite;
-    height: 20px;
-    width: 20px;
-    line-height: 20px;
-    font-size: 20px;
+    content: "";
+    animation: spin 1.75s linear infinite;
+    height: 31px;
+    width: 31px;
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-left: -10px;
-    margin-top: -10px;
-    color: #227BC9;
+    margin-left: -15px;
+    margin-top: -15px;
     z-index: 2;
+
+	background: url("../images/icons/gear.svg");
 }
 
 #sm_menu_ham {

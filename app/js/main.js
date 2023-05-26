@@ -1,17 +1,5 @@
 $(document).ready(function ($) {
-    window.addEventListener('scroll', onScroll);
-    function onScroll(e){
-        var distanceY = window.pageYOffset || document.documentElement.scrollTop;
-            shrinkOn = 30;
-        if (distanceY > shrinkOn) {
-            $("header" ).addClass("scrolled");
-        } else {
-            $("header" ).removeClass("scrolled");
-        }
-    }
-    onScroll();
-    
-    
+
     $(".mobile_menu").simpleMobileMenu({
         "menuStyle": "slide",
     });
@@ -21,6 +9,27 @@ $(document).ready(function ($) {
         $('html, body').animate({
             scrollTop: $(trgt).offset().top
         }, 1000);
+    });
+
+    $(".text-hidden").each(function(){
+        var h = $(".text", this).height();
+        var text = $(".text", this);
+        if(h > 200) {
+            text.height(200);
+            text.attr("original-height", h);
+            text.addClass("is-hidden");
+
+            $(".read-more", this).on('click', function(){
+                if(text.hasClass("is-hidden")) {
+                    text.removeClass("is-hidden");
+                    text.height( text.attr("original-height"));
+                }
+                else {
+                    text.addClass("is-hidden");
+                    text.height(200);
+                }
+            });
+        }
     });
 
     document.addEventListener( 'wpcf7mailsent', function( event ) {

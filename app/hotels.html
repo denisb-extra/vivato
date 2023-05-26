@@ -171,7 +171,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="button">
+                <div class="button button-viva">
                     <span>VIVA...</span>
                 </div>
             </div>
@@ -249,8 +249,16 @@
                             </div>
                         </div>
                     </div>
+                    <div class="button button-viva">
+                        <span>VIVA...</span>
+                    </div>
                 </div>
                 <div class="main">
+                    <div class="panel-results">
+                        <p class="count">
+                            נמצאו <span>578</span> נכסים
+                        </p>
+                    </div>
                     <div class="boxes">
                         <div class="box box-hotel">
                             <div class="inner">
@@ -283,8 +291,18 @@
                                     </div>
                                     
                                     <div class="description">
-                                        <p>הוא אופציה נהדרת למטיילים המבקרים באויה, אשרמציע אזור רומנטי לצד כל השירותים המועילים שנועדו למקסם את השהות שלך.<p></p></p>
+                                        <p>הוא אופציה נהדרת למטיילים המבקרים באויה, אשרמציע אזור רומנטי לצד כל השירותים המועילים שנועדו למקסם את השהות שלך.</p>
                                     </div>
+
+                                    <div class="wrapper-price">
+                                        <p class="price">
+                                            <span class="num">456</span>
+                                            <span class="cur">EUR</span>
+                                        </p>
+                                    </div>
+                                    <p class="urgency_message">נשאר רק אחד במחיר הזה ב-Booking.com</p>
+
+                                    <p class="ribbon_text">123</p>
                                 </div>
                             </div>
                         </div>
@@ -325,6 +343,10 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+
+                    <div class="centered">
+                        <div class="load-more">טען עוד תוצאות ...</div>
                     </div>
                 </div>
             </div>
@@ -559,6 +581,11 @@
                 $(".num", cont).text(num)
             });
 
+            if($(window).width() < 950) {
+                $(".hotels .sidebar .main-title").on("click", function(){
+                    $(".hotels .sidebar .hotels-filters").slideToggle();
+                });
+            }
 		});
 	</script>
 </body>
