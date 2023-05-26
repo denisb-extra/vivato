@@ -247,6 +247,10 @@ section {
     pointer-events: none; }
   .load-more:hover {
     background: #8564E4; }
+  @media only screen and (max-width: 950px) {
+    .load-more {
+      font-size: 18px;
+      padding: 15px 20px; } }
 
 .button-yellow {
   font-family: 'VarelaRound-regular';
@@ -2302,6 +2306,55 @@ section.hotels .boxes {
             top: 21px; }
       .hotels-panel-top .button {
         display: none; } }
+
+.panel-results {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 45px; }
+  .panel-results .count {
+    font-family: 'VarelaRound-regular';
+    font-size: 18px;
+    color: var(--color-text); }
+    .panel-results .count span {
+      color: var(--color-main); }
+  .panel-results .sort {
+    margin-right: 35px;
+    display: flex;
+    align-items: center; }
+    .panel-results .sort .label {
+      font-family: 'VarelaRound-regular';
+      font-size: 18px;
+      color: var(--color-text); }
+    .panel-results .sort select {
+      font-family: 'VarelaRound-regular';
+      font-size: 18px;
+      color: var(--color-text);
+      padding: 10px 15px;
+      padding-left: 35px;
+      border: 2px solid var(--color-main);
+      box-shadow: rgba(0, 0, 0, 0.15) 0px 10px 20px;
+      border-radius: 10px;
+      outline: none;
+      -webkit-appearance: none;
+         -moz-appearance: none;
+              appearance: none;
+      margin-right: 15px;
+      background: url("../images/icons/hotels-panel/rd.svg") no-repeat;
+      background-position: left 10px center; }
+  @media only screen and (max-width: 950px) {
+    .panel-results {
+      justify-content: flex-start; }
+      .panel-results .count {
+        font-size: 16px; }
+      .panel-results .sort {
+        margin-right: 25px; }
+        .panel-results .sort .label {
+          font-size: 16px; }
+        .panel-results .sort select {
+          font-size: 16px;
+          padding: 8px 11px;
+          padding-left: 30px; } }
 
 .hotels-filters {
   margin-top: 10px; }

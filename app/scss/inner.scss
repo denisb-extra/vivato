@@ -815,6 +815,67 @@ section.hotels {
     }
 }
 
+.panel-results {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 45px;
+
+    .count {
+        @include f-r;
+        font-size: 18px;
+        color: var(--color-text);
+        span {
+            color: var(--color-main)
+        }
+    }
+
+    .sort {
+        margin-right: 35px;
+        display: flex;
+        align-items: center;
+        .label {
+            @include f-r;
+            font-size: 18px;
+            color: var(--color-text);
+        }
+
+        select {
+            @include f-r;
+            font-size: 18px;
+            color: var(--color-text);
+            padding: 10px 15px;
+            padding-left: 35px;
+            border: 2px solid var(--color-main);
+            box-shadow: rgba(0, 0, 0, 0.15) 0px 10px 20px;
+            border-radius: 10px;
+            outline: none;
+            appearance: none;
+            margin-right: 15px;
+            background: url("../images/icons/hotels-panel/rd.svg") no-repeat;
+            background-position: left 10px center;
+        }
+    }
+
+    @media only screen and (max-width : $mw) {
+        justify-content: flex-start;
+        .count {
+            font-size: 16px;
+        }
+        .sort {
+            margin-right: 25px;
+            .label {
+                font-size: 16px;
+            }
+            select {
+                font-size: 16px;
+                padding: 8px 11px;
+                padding-left: 30px;
+            }
+        }
+    }
+}
+
 
 .hotels-filters {
     margin-top: 10px;

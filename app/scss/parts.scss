@@ -285,6 +285,11 @@ section {
 	&:hover {
 		background: #8564E4;
 	}
+
+	@media only screen and (max-width : $mw) {
+		font-size: 18px;
+		padding: 15px 20px;
+	}
 }
 
 .button-yellow {
