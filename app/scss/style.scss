@@ -67,6 +67,13 @@ body {
   	@include f-r;
   	font-size: 18px;
 
+	padding-top: 90px;
+	@media only screen and (max-width : $lw) {
+		padding-top: 75px;
+	}
+	@media only screen and (max-width : $tw) {
+		padding-top: 60px;
+	}
 	@media only screen and (max-width : $mw) {
 		padding-top: 45px;
 	}
@@ -103,4 +110,5 @@ ul {
 @import 'parts';
 @import 'index';
 @import 'inner';
+@import 'box-template';
 @import 'wp';
