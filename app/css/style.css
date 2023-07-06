@@ -153,6 +153,8 @@ section {
     color: var(--color-main); }
   .section-title.white {
     color: #fff; }
+  .section-title.small {
+    font-size: 36px; }
   @media only screen and (max-width: 1370px) {
     .section-title {
       font-size: 57px; } }
@@ -320,6 +322,8 @@ section {
           filter: drop-shadow(0px 15px 30px rgba(63, 80, 112, 0.26));
   border-radius: 10px;
   overflow: hidden; }
+  .image-shadow img {
+    max-width: 100%; }
 
 .button-viva {
   background: var(--color-main);
@@ -1447,17 +1451,18 @@ section.attraction .image {
   -webkit-filter: drop-shadow(0px 15px 30px rgba(63, 80, 112, 0.26));
           filter: drop-shadow(0px 15px 30px rgba(63, 80, 112, 0.26));
   border-radius: 10px; }
-  section.attraction .image .play {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    cursor: pointer;
-    outline: none; }
-    section.attraction .image .play img {
-      transition: 0.5s; }
-    section.attraction .image .play:hover img {
-      transform: scale(1.1); }
+
+section.attraction .play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  cursor: pointer;
+  outline: none; }
+  section.attraction .play img {
+    transition: 0.5s; }
+  section.attraction .play:hover img {
+    transform: scale(1.1); }
 
 section.attraction .swiper-container {
   overflow: visible; }
@@ -2121,7 +2126,7 @@ section.hotels .boxes {
       color: var(--color-text); }
       .box-hotel .text .description p {
         margin-top: 15px; }
-    .box-hotel .text .price {
+    .box-hotel .text .wrapper-price {
       display: inline-block;
       background: var(--color-main);
       font-family: 'VarelaRound-regular';
@@ -2130,8 +2135,13 @@ section.hotels .boxes {
       padding: 8px 10px;
       border-radius: 3px;
       margin-top: 20px; }
-      .box-hotel .text .price .cur {
+      .box-hotel .text .wrapper-price .cur {
         font-size: 13px; }
+      .box-hotel .text .wrapper-price .price {
+        display: flex;
+        align-items: flex-end; }
+        .box-hotel .text .wrapper-price .price .num {
+          margin-right: 5px; }
     .box-hotel .text .urgency_message {
       display: inline-block;
       background: #E6E6E6;
@@ -2163,7 +2173,7 @@ section.hotels .boxes {
         background-position: right top 3px; }
       .box-hotel .text .description {
         font-size: 18px; }
-      .box-hotel .text .price {
+      .box-hotel .text .wrapper-price {
         margin-top: 10px;
         font-size: 18px; } }
   @media only screen and (max-width: 1200px) {
@@ -2180,7 +2190,7 @@ section.hotels .boxes {
         background-position: right top 4px; }
       .box-hotel .text .description {
         font-size: 17px; }
-      .box-hotel .text .price {
+      .box-hotel .text .wrapper-price {
         margin-top: 10px;
         font-size: 18px; } }
   @media only screen and (max-width: 950px) {
@@ -2221,7 +2231,7 @@ section.hotels .boxes {
               margin-top: 4px; }
       .box-hotel .text .description {
         font-size: 15px; }
-      .box-hotel .text .price {
+      .box-hotel .text .wrapper-price {
         margin-top: 8px;
         font-size: 16px; }
       .box-hotel .text .urgency_message {
@@ -2314,6 +2324,27 @@ section.hotel .slider-hotel-thumbs {
     height: 150px; }
     section.hotel .slider-hotel-thumbs .swiper-wrapper .swiper-slide img {
       height: 100%; }
+  section.hotel .slider-hotel-thumbs .nav {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    left: 10px;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    pointer-events: none; }
+    section.hotel .slider-hotel-thumbs .nav .arrow {
+      border-radius: 100%;
+      height: 35px;
+      width: 35px;
+      background: var(--color-main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      pointer-events: auto; }
 
 @media only screen and (max-width: 1370px) {
   section.hotel .title-main {
@@ -2345,7 +2376,13 @@ section.hotel .slider-hotel-thumbs {
   section.hotel .slider-hotel-main .swiper-wrapper .swiper-slide {
     max-height: 280px; }
   section.hotel .slider-hotel-thumbs .swiper-wrapper .swiper-slide {
-    height: 70px; } }
+    height: 70px; }
+  section.hotel .slider-hotel-thumbs .nav {
+    left: -7px;
+    right: -7px; }
+    section.hotel .slider-hotel-thumbs .nav .arrow {
+      height: 25px;
+      width: 25px; } }
 
 /* --------------------- /Section hotel ---------------------- */
 .bar-bottom-hotel {
@@ -2756,6 +2793,13 @@ section.articles .sidebar .filter {
   margin-top: 55px; }
   section.articles .sidebar .filter:first-child {
     margin-top: 0; }
+  section.articles .sidebar .filter.hidden .title {
+    background-image: url("../images/icons/rd.svg");
+    background-repeat: no-repeat;
+    background-position: left 10px center;
+    cursor: pointer; }
+  section.articles .sidebar .filter.hidden .items {
+    display: none; }
 
 section.articles .sidebar .title {
   font-family: 'VarelaRound-regular';
@@ -2767,7 +2811,7 @@ section.articles .sidebar .title {
   display: block; }
 
 section.articles .sidebar .items {
-  margin-top: 15px; }
+  padding-top: 15px; }
   section.articles .sidebar .items .item {
     margin-top: 8px;
     display: flex;
@@ -2965,6 +3009,11 @@ section.wpuf-form {
       margin-top: 20px; }
       section.wpuf-form form .wpuf-el .wpuf-label {
         margin-bottom: 0 !important; }
+      section.wpuf-form form .wpuf-el .wpuf-section-title {
+        color: #fff;
+        font-size: 30px; }
+      section.wpuf-form form .wpuf-el .wpuf-section-details {
+        color: #fff; }
       section.wpuf-form form .wpuf-el .wpuf-fields {
         position: relative; }
         section.wpuf-form form .wpuf-el .wpuf-fields .wpuf-eye {
@@ -4220,9 +4269,7 @@ section.weather .section-daily {
       font-size: 0;
       margin: 10px auto; }
       section.weather .section-daily .wrapper-hour .icon img {
-        max-height: 100%;
-        -webkit-filter: brightness(0) invert(1);
-                filter: brightness(0) invert(1); }
+        max-height: 100%; }
 
 section.weather .wrapper-forecast {
   background: #5A4596;
@@ -4248,9 +4295,7 @@ section.weather .wrapper-forecast {
       height: 35px;
       font-size: 0; }
       section.weather .wrapper-forecast .line .icon img {
-        max-height: 100%;
-        -webkit-filter: brightness(0) invert(1);
-                filter: brightness(0) invert(1); }
+        max-height: 100%; }
     section.weather .wrapper-forecast .line .bar {
       background: #FFFFFF;
       border-radius: 59px;
@@ -4505,6 +4550,125 @@ section.currency .remark {
     font-size: 16px; } }
 
 /* --------------------- /Section currency ---------------------- */
+/* ---------------------- Section contact ---------------------- */
+section.contact {
+  overflow: visible; }
+  section.contact .decor {
+    left: 0;
+    top: 0;
+    width: 33.33%;
+    text-align: left; }
+    @media only screen and (max-width: 950px) {
+      section.contact .decor {
+        width: 35%; } }
+  section.contact .parts {
+    margin-top: 45px;
+    width: 80%; }
+    section.contact .parts .part-info {
+      width: 40%;
+      padding-right: 90px; }
+  section.contact .subtitle {
+    font-family: 'VarelaRound-regular';
+    font-size: 45px;
+    color: var(--color-main); }
+  section.contact .content {
+    margin-top: 15px; }
+  @media only screen and (max-width: 950px) {
+    section.contact .parts {
+      width: auto; }
+      section.contact .parts .part-info {
+        padding-right: 40px; } }
+
+/* --------------------- /Section contact ---------------------- */
+.wpcf7 {
+  margin-top: 55px; }
+  .wpcf7 form {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -10px -15px; }
+  .wpcf7 .wpcf7-form-control-wrap {
+    width: 100%;
+    padding: 20px 15px; }
+    .wpcf7 .wpcf7-form-control-wrap.wide {
+      width: 100%; }
+    .wpcf7 .wpcf7-form-control-wrap .wpcf7-list-item {
+      display: block;
+      margin-top: 10px; }
+  .wpcf7 .wpcf7-form-control-wrap[data-name*="newsletter"], .wpcf7 .wrapper-submit {
+    width: 50%; }
+    @media only screen and (max-width: 950px) {
+      .wpcf7 .wpcf7-form-control-wrap[data-name*="newsletter"], .wpcf7 .wrapper-submit {
+        width: 100%; } }
+  .wpcf7 .wrapper-submit {
+    text-align: left; }
+  .wpcf7 input, .wpcf7 select, .wpcf7 textarea {
+    width: 100%;
+    font-family: 'VarelaRound-regular';
+    font-size: 20px;
+    color: #404040;
+    outline: none;
+    background: transparent;
+    border-bottom: 1px solid #404040;
+    padding: 8px 0; }
+    .wpcf7 input::-webkit-input-placeholder, .wpcf7 select::-webkit-input-placeholder, .wpcf7 textarea::-webkit-input-placeholder {
+      /* WebKit browsers */
+      color: #404040; }
+    .wpcf7 input:-moz-placeholder, .wpcf7 select:-moz-placeholder, .wpcf7 textarea:-moz-placeholder {
+      /* Mozilla Firefox 4 to 18 */
+      color: #404040; }
+    .wpcf7 input::-moz-placeholder, .wpcf7 select::-moz-placeholder, .wpcf7 textarea::-moz-placeholder {
+      /* Mozilla Firefox 19+ */
+      color: #404040; }
+    .wpcf7 input:-ms-input-placeholder, .wpcf7 select:-ms-input-placeholder, .wpcf7 textarea:-ms-input-placeholder {
+      /* Internet Explorer 10+ */
+      color: #404040; }
+    .wpcf7 input[type="checkbox"], .wpcf7 select[type="checkbox"], .wpcf7 textarea[type="checkbox"] {
+      width: auto;
+      margin: 5px; }
+    .wpcf7 input[type="submit"], .wpcf7 select[type="submit"], .wpcf7 textarea[type="submit"] {
+      font-family: 'VarelaRound-regular';
+      font-size: 20px;
+      color: var(--color-second);
+      font-style: normal;
+      border-bottom: 2px solid var(--color-second);
+      width: auto;
+      transition: 0.5s;
+      padding-left: 35px;
+      background: url("../images/icons/plane.svg") no-repeat;
+      background-position: left center;
+      margin-left: 0;
+      margin-right: auto;
+      cursor: pointer; }
+      .wpcf7 input[type="submit"]:hover, .wpcf7 select[type="submit"]:hover, .wpcf7 textarea[type="submit"]:hover {
+        color: var(--color-main); }
+  .wpcf7 textarea {
+    padding: 8px;
+    border: 1px solid #fff;
+    height: 70px; }
+  .wpcf7 .wpcf7-not-valid-tip {
+    font-size: 10px; }
+  .wpcf7 form .wpcf7-response-output {
+    font-size: 13px;
+    display: none; }
+  .wpcf7 .wpcf7-spinner {
+    position: absolute; }
+  @media only screen and (max-width: 950px) {
+    .wpcf7 .wpcf7-form-control-wrap {
+      width: 100%; } }
+
+/* ---------------------- Section about ---------------------- */
+section.about {
+  overflow: visible; }
+  section.about .parts:nth-child(2) {
+    margin-top: 100px; }
+  @media only screen and (max-width: 950px) {
+    section.about .parts:nth-child(2) {
+      margin-top: 0px;
+      flex-direction: column-reverse; }
+      section.about .parts:nth-child(2) .part :nth-child(1) {
+        margin-top: 25px; } }
+
+/* --------------------- /Section about ---------------------- */
 .box-attraction-slide {
   position: relative; }
   .box-attraction-slide .image {
@@ -4790,6 +4954,19 @@ section.currency .remark {
     min-height: 100%;
     min-width: 100%; }
 
+.box-article-blogger .caption-location {
+  font-family: 'VarelaRound-regular';
+  font-size: 16px;
+  color: var(--color-text);
+  text-align: center;
+  padding: 10px;
+  background: #F9B233;
+  position: absolute;
+  top: 15px;
+  left: -65px;
+  width: 237px;
+  transform: rotate(323deg); }
+
 .box-article-blogger .reward {
   position: absolute;
   width: 54px;
@@ -4876,6 +5053,12 @@ section.currency .remark {
     height: 40px;
     top: 15px;
     left: 15px; }
+  .box-article-blogger .caption-location {
+    font-size: 14px;
+    padding: 6px;
+    top: 15px;
+    left: -80px;
+    width: 237px; }
   .box-article-blogger .text {
     padding: 35px 20px;
     padding-bottom: 25px; }

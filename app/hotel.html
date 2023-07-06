@@ -230,6 +230,15 @@
                                 <img src="images/inner/attraction/big/b4.png">
                             </div>
                         </div>
+
+                        <div class="nav">
+                            <div class="arrow arrow-left">
+                                <img src="images/icons/angle-right-w.svg">
+                            </div>
+                            <div class="arrow arrow-right">
+                                <img src="images/icons/angle-left-w.svg">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -808,15 +817,27 @@
                 slidesPerView: 3,
                 spaceBetween: 13,
                 loop: true,
+                allowTouchMove: false, 
+                navigation: {
+                    nextEl: '.arrow-right',
+                    prevEl: '.arrow-left',
+                },
+
                 breakpoints: {
                     0: {
                         spaceBetween: 35,
+                        allowTouchMove: true,
+                    },
+                    950: {
+                        allowTouchMove: false,
                     },
                     1360: {
                         spaceBetween: 55,
                     },
                 }
             });
+
+    
 
 			var galleryMain= new Swiper('.slider-hotel-main', {
                 slidesPerView: 1,

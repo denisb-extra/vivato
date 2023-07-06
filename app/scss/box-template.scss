@@ -366,6 +366,20 @@
             min-width: 100%;
         }
     }
+    .caption-location {
+        @include f-r;
+        font-size: 16px;
+        color: var(--color-text);
+        text-align: center;
+        padding: 10px;
+        background: #F9B233;
+        position: absolute;
+        top: 15px;
+        left: -65px;
+
+        width: 237px;
+        transform: rotate(323deg);
+    }
     .reward {
         position: absolute;
         width: 54px;
@@ -472,6 +486,13 @@
             height: 40px;
             top: 15px;
             left: 15px;
+        }
+        .caption-location {
+            font-size: 14px;
+            padding: 6px;
+            top: 15px;
+            left: -80px;
+            width: 237px;
         }
         .text {
             padding: 35px 20px;

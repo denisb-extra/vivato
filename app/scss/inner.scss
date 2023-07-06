@@ -134,24 +134,25 @@ section.attraction {
         overflow: hidden;
         filter: drop-shadow(0px 15px 30px rgba(63, 80, 112, 0.26));
         border-radius: 10px;
+    }
 
-        .play {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translateX(-50%) translateY(-50%);
-            cursor: pointer;
-            outline: none;
+    .play {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        cursor: pointer;
+        outline: none;
+        img {
+            transition: 0.5s;
+        }
+        &:hover {
             img {
-                transition: 0.5s;
-            }
-            &:hover {
-                img {
-                    transform: scale(1.1);
-                }
+                transform: scale(1.1);
             }
         }
     }
+
     .swiper-container {
         overflow: visible;
         .swiper-wrapper {
@@ -1045,7 +1046,7 @@ section.hotels {
             }
         }
 
-        .price {
+        .wrapper-price {
             display: inline-block;
             background: var(--color-main);
             @include f-b;
@@ -1057,7 +1058,15 @@ section.hotels {
             .cur {
                 font-size: 13px;
             }
+            .price {
+                display: flex;
+                align-items: flex-end;
+                .num {
+                    margin-right: 5px;
+                }
+            }
         }
+        
 
         .urgency_message {
             display: inline-block;
@@ -1104,7 +1113,7 @@ section.hotels {
                 font-size: 18px;
             }
 
-            .price {
+            .wrapper-price {
                 margin-top: 10px;
                 font-size: 18px;
             }
@@ -1134,7 +1143,7 @@ section.hotels {
                 font-size: 17px;
             }
 
-            .price {
+            .wrapper-price {
                 margin-top: 10px;
                 font-size: 18px;
             }
@@ -1197,7 +1206,7 @@ section.hotels {
                 font-size: 15px;
             }
 
-            .price {
+            .wrapper-price {
                 margin-top: 8px;
                 font-size: 16px;
             }
@@ -1324,6 +1333,28 @@ section.hotel {
                 }
             }
         }
+
+        .nav {
+            position: absolute;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            left: 10px;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 2;
+            pointer-events: none;
+            .arrow {
+                border-radius: 100%;
+                height: 35px;
+                width: 35px;
+                background: var(--color-main);
+                @include flex-center;
+                cursor: pointer;
+                pointer-events: auto;
+            }
+        }
     }
 
     @media only screen and (max-width : $lw) {
@@ -1391,6 +1422,14 @@ section.hotel {
             .swiper-wrapper {
                 .swiper-slide {
                     height: 70px;
+                }
+            }
+            .nav {
+                left: -7px;
+                right: -7px;
+                .arrow {
+                    height: 25px;
+                    width: 25px;
                 }
             }
         }
@@ -1943,6 +1982,19 @@ section.articles {
             &:first-child {
                 margin-top: 0;
             }
+
+            &.hidden {
+                .title {
+                    background-image: url("../images/icons/rd.svg");
+                    background-repeat: no-repeat;
+                    background-position: left 10px center;
+                    cursor: pointer;
+                }
+        
+                .items {
+                    display: none;
+                }
+            }
         }
         .title {
             @include f-r;
@@ -1955,7 +2007,7 @@ section.articles {
         }
 
         .items {
-            margin-top: 15px;
+            padding-top: 15px;
             .item {
                 margin-top: 8px;
                 display: flex;
@@ -2204,6 +2256,13 @@ section.wpuf-form {
             margin-top: 20px;
             .wpuf-label {
                 margin-bottom: 0 !important;
+            }
+            .wpuf-section-title {
+                color: #fff;
+                font-size: 30px;
+            }
+            .wpuf-section-details {
+                color: #fff;;
             }
             .wpuf-fields {
                 position: relative;
@@ -3981,7 +4040,7 @@ section.weather {
                 margin: 10px auto;
                 img {
                     max-height: 100%;
-                    filter: brightness(0) invert(1);
+                    //filter: brightness(0) invert(1);
                 }
             }
         }
@@ -4018,7 +4077,7 @@ section.weather {
                 
                 img {
                     max-height: 100%;
-                    filter: brightness(0) invert(1);
+                    //filter: brightness(0) invert(1);
                 }
             }
             .bar {
@@ -4361,3 +4420,167 @@ section.currency {
 /* --------------------- /Section currency ---------------------- */
 
 
+/* ---------------------- Section contact ---------------------- */
+section.contact {
+    overflow: visible;
+    .decor {
+        left: 0;
+        top: 0;
+        width: 33.33%;
+        text-align: left;
+        @media only screen and (max-width : $mw) {
+            width: 35%;
+        }
+    }
+
+    .parts {
+        margin-top: 45px;
+        width: 80%;
+        .part-info {
+            width: 40%;
+            padding-right: 90px;
+        }
+    }
+    .subtitle {
+        @include f-r;
+        font-size: 45px;
+        color: var(--color-main);
+    }
+
+    .content {
+        margin-top: 15px;
+    }
+
+    @media only screen and (max-width : $mw) {
+        .parts {
+            width: auto;
+            .part-info {
+                padding-right: 40px;
+            }
+        }
+    }
+}
+/* --------------------- /Section contact ---------------------- */
+
+.wpcf7 {
+    margin-top: 55px;
+    form {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -10px -15px;
+    }
+
+    .wpcf7-form-control-wrap {
+        width: 100%;
+        padding: 20px 15px;
+        &.wide {
+            width: 100%;
+        }
+
+        .wpcf7-list-item  {
+            display: block;
+            margin-top: 10px;
+        }
+    }
+
+    .wpcf7-form-control-wrap[data-name*="newsletter"], .wrapper-submit {
+        width: 50%;
+
+        @media only screen and (max-width : $mw) {
+            width: 100%;
+        }
+    }
+    .wrapper-submit {
+        text-align: left;
+    }
+    input, select, textarea {
+        width: 100%;
+
+        @include f-r;
+        font-size: 20px;
+        color: #404040;
+     
+        @include placeholder-color(#404040);
+        outline: none;
+
+        background: transparent;
+        border-bottom: 1px solid #404040;
+        padding: 8px 0;
+
+        &[type="checkbox"] {
+            width: auto;
+            margin: 5px;
+        }
+
+        &[type="submit"] {
+            
+            @include f-r;
+            font-size: 20px;
+            color: var(--color-second);
+            font-style: normal;
+            border-bottom: 2px solid var(--color-second);
+            width: auto;
+            transition: 0.5s;
+            padding-left: 35px;
+            background: url("../images/icons/plane.svg") no-repeat;
+            background-position: left center;
+            
+            margin-left: 0;
+            margin-right: auto;
+            cursor: pointer;
+            &:hover {
+                color: var(--color-main);
+            }
+        }
+    }
+
+    textarea {
+        padding: 8px;
+        border: 1px solid #fff;
+        height: 70px;
+    }
+
+
+
+    .wpcf7-not-valid-tip {
+        font-size: 10px;
+    }
+    form .wpcf7-response-output {
+        font-size: 13px;
+        display: none;
+    }
+    .wpcf7-spinner {
+        position: absolute;
+    }
+    @media only screen and (max-width : $mw) {
+        .wpcf7-form-control-wrap {
+            width: 100%;
+        }
+    }
+}
+
+
+/* ---------------------- Section about ---------------------- */
+section.about {
+    overflow: visible;
+    .parts {
+        &:nth-child(2) {
+            margin-top: 100px;
+        }
+    }
+
+    @media only screen and (max-width : $mw) {
+        .parts {
+            &:nth-child(2) {
+                margin-top: 0px;
+                flex-direction: column-reverse;
+                .part {
+                    :nth-child(1) {
+                        margin-top: 25px;
+                    }
+                }
+            }
+        }
+    }
+}
+/* --------------------- /Section about ---------------------- */
