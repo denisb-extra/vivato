@@ -498,6 +498,11 @@ header {
   z-index: 9999; }
   header.scrolled {
     box-shadow: 0px 2px 15px 0px rgba(50, 50, 50, 0.2); }
+    @media only screen and (min-width: 950px) {
+      header.scrolled .logo img.main {
+        opacity: 1; }
+      header.scrolled .logo img.white {
+        opacity: 0; } }
   @media only screen and (min-width: 950px) {
     header.home:not(.scrolled) {
       background: transparent; }
@@ -529,9 +534,19 @@ header {
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: flex-start; }
+    justify-content: flex-start;
+    position: relative; }
     header .logo img {
-      max-height: 60%; }
+      max-height: 60%;
+      transition: opacity 0.5s; }
+    header .logo img.main {
+      opacity: 0; }
+    header .logo img.white {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 1; }
   header .part-left, header .logo {
     flex: 1 0; }
   header .part-left {
