@@ -1198,9 +1198,22 @@ body > footer {
                 flex-wrap: wrap;
                 margin-top: 35px;
                 .col {
-                    flex: 50% 1;
-                    margin-top: 25px;
+                    flex: 100% 1;
+                    margin-top: 17px;
+                    .title {
+                        width: 100%;
+                        padding-bottom: 8px;
+                        cursor: pointer;
+                        &:before {
+                            position: absolute;
+                            left: 5px;
+                            top: 3px;
+                            content: "+";
+                        }
+                    }
                     .content {
+                        margin-top: 10px;
+                        display: none;
                         ul {
                             margin-top: 0;
                             li {

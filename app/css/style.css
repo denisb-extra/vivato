@@ -1297,13 +1297,25 @@ body > footer {
         flex-wrap: wrap;
         margin-top: 35px; }
         body > footer .part-top .cols .col {
-          flex: 50% 1;
-          margin-top: 25px; }
-          body > footer .part-top .cols .col .content ul {
-            margin-top: 0; }
-            body > footer .part-top .cols .col .content ul li {
-              margin-top: 0;
-              font-size: 17px; }
+          flex: 100% 1;
+          margin-top: 17px; }
+          body > footer .part-top .cols .col .title {
+            width: 100%;
+            padding-bottom: 8px;
+            cursor: pointer; }
+            body > footer .part-top .cols .col .title:before {
+              position: absolute;
+              left: 5px;
+              top: 3px;
+              content: "+"; }
+          body > footer .part-top .cols .col .content {
+            margin-top: 10px;
+            display: none; }
+            body > footer .part-top .cols .col .content ul {
+              margin-top: 0; }
+              body > footer .part-top .cols .col .content ul li {
+                margin-top: 0;
+                font-size: 17px; }
     body > footer .part-bottom .top .menu-cont ul.main-menu {
       flex-direction: column; }
     body > footer .part-bottom .bottom {
