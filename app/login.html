@@ -20,6 +20,7 @@
         <script src="plugins/mmenu/jquery-simple-mobilemenu.js"></script>
         <link rel="stylesheet" href="plugins/mmenu/styles/jquery-simple-mobilemenu-slide.css" />
 
+        <link rel="stylesheet" href="http://vivato-dev.s305.upress.link/wp-admin/css/login-rtl.min.css?ver=6.3" />
         <link rel="stylesheet" href="css/style.css" />
     </head>
     <body>
@@ -128,6 +129,86 @@
                             <input type="hidden" name="redirect_to" value="http://vivato-dev.s305.upress.link/%D7%94%D7%AA%D7%97%D7%91%D7%A8-%D7%9C%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA/" />
                         </p>
                     </form>
+                    <div class="buttons-panel">
+                        <a class="button" href="http://vivato-dev.s305.upress.link/%d7%94%d7%a8%d7%a9%d7%9e%d7%aa-%d7%9e%d7%a9%d7%aa%d7%9e%d7%a9-%d7%97%d7%93%d7%a9/">הרשמה לאתר</a>
+                        <a class="button" href="http://vivato-dev.s305.upress.link/%d7%94%d7%a8%d7%a9%d7%9e%d7%aa-%d7%91%d7%9c%d7%95%d7%92%d7%a8/">הרשם כבלוגר</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="login">
+            <div class="section-inner">
+                <p class="section-title centered">התחברות <span>למערכת</span></p>
+                <br />
+                <div class="content white centered">
+                    <meta name="referrer" content="strict-origin-when-cross-origin" />
+                    <meta name="viewport" content="width=device-width" />
+
+                    <script type="text/javascript">
+                        document.body.className = document.body.className.replace("no-js", "js");
+                    </script>
+                    <div id="login">
+                        <h1><a href="https://he.wordpress.org/">פועל על וורדפרס</a></h1>
+
+                        <form name="loginform" id="loginform" action="http://vivato-dev.s305.upress.link/wp-login.php" method="post">
+                            <p>
+                                <label for="user_login">שם משתמש או כתובת אימייל</label>
+                                <input type="text" name="log" id="user_login" class="input" value="" size="20" autocapitalize="off" autocomplete="username" required="required" />
+                            </p>
+
+                            <div class="user-pass-wrap">
+                                <label for="user_pass">סיסמה</label>
+                                <div class="wp-pwd">
+                                    <input type="password" name="pwd" id="user_pass" class="input password-input" value="" size="20" autocomplete="current-password" spellcheck="false" required="required" />
+                                    <button type="button" class="button button-secondary wp-hide-pw hide-if-no-js" data-toggle="0" aria-label="הצג סיסמה">
+                                        <span class="dashicons dashicons-visibility" aria-hidden="true"></span>
+                                    </button>
+                                </div>
+                            </div>
+                            <p class="forgetmenot"><input name="rememberme" type="checkbox" id="rememberme" value="forever" /> <label for="rememberme">זכור אותי</label></p>
+                            <p class="submit">
+                                <input type="submit" name="wp-submit" id="wp-submit" class="button button-primary button-large" value="התחבר" />
+                                <input type="hidden" name="redirect_to" value="http://vivato-dev.s305.upress.link/" />
+                                <input type="hidden" name="testcookie" value="1" />
+                            </p>
+                        </form>
+
+                        <p id="nav"><a rel="nofollow" href="http://vivato-dev.s305.upress.link/%d7%94%d7%a8%d7%a9%d7%9e%d7%aa-%d7%9e%d7%a9%d7%aa%d7%9e%d7%a9-%d7%97%d7%93%d7%a9/">הרשמה</a> | <a href="http://vivato-dev.s305.upress.link/wp-login.php?action=lostpassword">שחזור סיסמה</a></p>
+                        <script type="text/javascript">
+                            function wp_attempt_focus() {
+                                setTimeout(function () {
+                                    try {
+                                        d = document.getElementById("user_login");
+                                        d.focus();
+                                        d.select();
+                                    } catch (er) {}
+                                }, 200);
+                            }
+                            wp_attempt_focus();
+                            if (typeof wpOnload === "function") {
+                                wpOnload();
+                            }
+                        </script>
+                        <p id="backtoblog">
+                            <a href="http://vivato-dev.s305.upress.link/">עבור אל Vivato Greece</a>
+                        </p>
+                    </div>
+                    <div class="language-switcher">
+                        <form id="language-switcher" action="" method="get">
+                            <label for="language-switcher-locales">
+                                <span class="dashicons dashicons-translation" aria-hidden="true"></span>
+                                <span class="screen-reader-text"> שפה </span>
+                            </label>
+
+                            <select name="wp_lang" id="language-switcher-locales">
+                                <option value="en_US" lang="en" data-installed="1">English (United States)</option>
+                                <option value="he_IL" lang="he" selected="selected" data-installed="1">עִבְרִית</option>
+                            </select>
+
+                            <input type="submit" class="button" value="שינוי" />
+                        </form>
+                    </div>
                     <div class="buttons-panel">
                         <a class="button" href="http://vivato-dev.s305.upress.link/%d7%94%d7%a8%d7%a9%d7%9e%d7%aa-%d7%9e%d7%a9%d7%aa%d7%9e%d7%a9-%d7%97%d7%93%d7%a9/">הרשמה לאתר</a>
                         <a class="button" href="http://vivato-dev.s305.upress.link/%d7%94%d7%a8%d7%a9%d7%9e%d7%aa-%d7%91%d7%9c%d7%95%d7%92%d7%a8/">הרשם כבלוגר</a>

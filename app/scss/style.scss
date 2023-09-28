@@ -45,9 +45,11 @@ $lw: 1370px;
 } 
 @mixin f-r {
 	font-family: 'VarelaRound-regular'; 
+	font-weight: 400;
 }
 @mixin f-b {
 	font-family: 'VarelaRound-regular'; 
+	font-weight: 700;
 }
 
 /* /Fonts */

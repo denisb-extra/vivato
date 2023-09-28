@@ -83,6 +83,7 @@ header {
         position: relative;
 		img {
 			max-height: 60%;
+            width: auto;
             transition: opacity 0.5s;
 		}
         img.main {
@@ -476,6 +477,7 @@ section.slider-top {
         margin-top: 200px;
         .selector {
             .title {
+                @include f-r;
                 font-size: 22px;
                 padding-top: 25px;
                 padding-bottom: 25px;
@@ -509,6 +511,15 @@ section.slider-top {
         height: 650px;
         .hotels-panel-top {
             margin-top: 100px;
+
+            .selector {
+                .modal {
+                    .items {
+                        column-count: 2;
+                        column-gap: 20px;
+                    }
+                }
+            }
         }
     }
 
@@ -536,6 +547,18 @@ section.slider-top {
                     &:after { 
                         top: 30px;
                         left: 20px;
+                    }
+                }
+
+                .modal {
+                    .items {
+                        column-count: 2;
+                        column-gap: 20px;
+                        .item.city {
+                            font-size: 18px;
+                            background-size: auto 15px;
+                            padding-right: 20px;
+                        }
                     }
                 }
             }
@@ -568,25 +591,34 @@ section.attractions-slider {
             width: 24%;
             flex-shrink: 0;
             padding-left: 60px;
+            padding-bottom: 60px;
             position: relative;
             .button-icon {
                 margin-top: 35px;
             }
 
-            .nav {
-                position: absolute;
-                bottom: 10px;
-                left: 60px;
-                display: flex;
-                align-items: center;
-                .arrow {
-                    cursor: pointer;
-                    margin: 0 20px;
-                }
-            }
+            
         }
         .part-slider {
             width: 76%;
+        }
+    }
+
+    .nav {
+        position: absolute;
+        bottom: 10px;
+        left: 60px;
+        display: flex;
+        align-items: center;
+        .arrow {
+            cursor: pointer;
+            margin: 0 20px;
+        }
+
+        &.nav-mobile {
+            position: static;
+            justify-content: center;
+            margin-top: 25px;
         }
     }
 
@@ -617,6 +649,7 @@ section.attractions-slider {
             padding-right: 85px;
             .part-text {
                 padding-left: 35px;
+                width: 35%;
             }
         }
     }
@@ -634,7 +667,7 @@ section.attractions-slider {
             .part-text {
                 width: 100%;
                 padding-right: 35px;
-                padding-bottom: 100px;
+                padding-bottom: 75px;
                 text-align: center;
                 .nav {
                     left: 0;
@@ -652,6 +685,17 @@ section.attractions-slider {
             .part-slider {
                 width: 100%;
                 margin-top: 25px;
+
+                .nav {
+                    position: static;
+                    justify-content: center;
+                    margin-top: 25px;
+                }
+                .button-icon {
+                    margin-top: 25px;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
             }
         }
     }
@@ -678,6 +722,7 @@ section.banners {
                 overflow: hidden;
                 img {
                     max-width: 100%;
+                    height: auto;
                 }
             }
         }
@@ -756,7 +801,7 @@ section.articles-index {
 
 /* ---------------------- Section hotels-index ---------------------- */
 section.hotels-index {
-    background: url('../images/index/bg-hotels.png') right center / contain no-repeat;
+    background: url('../images/index/bg-hotels.jpg') right center / contain no-repeat;
     .wrapper-hotels {
         width: 60%;
         margin-left: 0;
@@ -769,7 +814,7 @@ section.hotels-index {
 
 
     @media only screen and (max-width : $mw) {
-        background: url('../images/index/bg-hotels-m.png') right center / cover no-repeat;
+        background: url('../images/index/bg-hotels-m.jpg') right center / cover no-repeat;
         .wrapper-hotels {
             width: 100%;
         }
@@ -803,6 +848,7 @@ section.blogger-stories {
             .box {
                 width: 100%;
                 max-width: 400px;
+                height: auto;
             }
         }
     }
@@ -814,7 +860,7 @@ section.blogger-stories {
 
 /* ---------------------- Section plan ---------------------- */
 section.plan {
-    background: url("../images/index/bg-plan.png") no-repeat;
+    background: url("../images/index/bg-plan.jpg") no-repeat;
     background-position: left center;
     background-size: 65% auto;
     padding: 140px 0;
@@ -864,7 +910,7 @@ section.plan {
 
     @media only screen and (max-width : $mw) {
         padding: 35px 0;
-        background: url("../images/index/bg-plan-m.png") no-repeat;
+        background: url("../images/index/bg-plan-m.jpg") no-repeat;
         background-size: cover;
         .wrapper-content {
             width: 100%;
@@ -922,11 +968,27 @@ section.tips {
                 transition: 0.5s;
                 filter: brightness(0);
                 opacity: 0.8;
+                height: 20px;
+                width: auto;
+            }
+
+            span {
+                @include f-r;
+                font-size: 10px;
+                color: var(--color-text);
+                white-space: nowrap;    
+                position: absolute;
+                bottom: 0;
+                transform: translateX(50%) translateY(100%);
+                transition: 0.5s;
             }
 
             &:hover {
                 img {
                     transform: translateX(50%) translateY(-100%) scale(1.1);
+                }
+                span {
+                    color: var(--color-main);
                 }
             }
 
@@ -934,6 +996,9 @@ section.tips {
                 img {
                     filter: brightness(1);
                     opacity: 1;
+                }
+                span {
+                    color: var(--color-main);
                 }
             }
         }
@@ -958,20 +1023,21 @@ section.image-wide {
     font-size: 0;
     img {
         width: 100%;
+        height: auto;
     }
 }
 /* --------------------- /Section image-wide ---------------------- */
 
 
 /* ---------------------- footer ---------------------- */
-body > footer {
+body > footer, main > footer {
     position: relative;
 	overflow: visible;
     z-index: 99;
     max-width: 1920px;
 	margin: auto;
 
-    background: #fff url("../images/index/bg-footer.png") no-repeat;
+    background: #fff url("../images/index/bg-footer.jpg") no-repeat;
     background-size: cover;
 
 
@@ -1065,7 +1131,11 @@ body > footer {
             display: flex;
             justify-content: space-between;
             align-items: center;
-
+            .logo {
+                img {
+                    width: auto;
+                }
+            }
             .menu-cont {
                 height: 100%;
                 text-align: right;
@@ -1133,6 +1203,13 @@ body > footer {
                 margin: 0 15px;
                 background: #fff
             }
+
+            a {
+                text-decoration: underline;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
         }
         
         
@@ -1149,6 +1226,7 @@ body > footer {
                 .logo {
                     img {
                         max-height: 40px;
+                        width: auto;
                     }
                 }
                 .menu-cont {
@@ -1180,7 +1258,10 @@ body > footer {
 
     @media only screen and (max-width : $mw) {
 
-
+        background-image: url("../images/index/bg-footer-m.jpg");
+        background-size: contain;
+        background-position: center top;
+        background-color: #7b66a0;
         .part-top {
             padding-top: 35px;
             padding-bottom: 35px;
@@ -1235,6 +1316,7 @@ body > footer {
             }
             .bottom {
                 flex-direction: column;
+                text-align: center;
                 .sep {
                     background: transparent;
                     height: 10px;
@@ -1245,11 +1327,6 @@ body > footer {
 
         
     }
-
-
-
-
-	
 }
 /* --------------------- /footer ---------------------- */
 .logoextra {
@@ -1270,6 +1347,7 @@ body > footer {
     display: inline-block;
     width: auto;
     max-width: 390px;
+    margin-top: 0;
     .wpcf7-form-control-wrap {
         width: 100%;
     }
@@ -1291,7 +1369,8 @@ body > footer {
         display: inline-block;
         position: absolute;
         left: 0;
-        top: 0;
+        top: 50%;
+        transform: translateY(-50%);
         height: 65px;
         width: 55px;
         background: transparent url("../images/icons/send.svg") no-repeat;
